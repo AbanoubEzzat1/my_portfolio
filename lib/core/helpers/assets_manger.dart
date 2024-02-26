@@ -6,4 +6,5 @@ class AssetsManager {
   static const String email = 'assets/images/email.png';
   static const String linkedIn = 'assets/images/linkedin.png';
   static const String github = 'assets/images/github.png';
+  static const String phone = 'assets/images/telephone.png';
 }

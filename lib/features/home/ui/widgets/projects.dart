@@ -18,35 +18,39 @@ class MyProjects extends StatelessWidget {
           style: TextStyles.font18BlackBold,
         ),
         verticalSpace(10),
-        GridView.builder(
-          shrinkWrap: true,
-          itemCount: 6,
-          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 3,
-            childAspectRatio: 1.3,
-            crossAxisSpacing: 0.5,
-            mainAxisSpacing: 0.5,
-          ),
-          itemBuilder: (context, index) => Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  color: ColorsManager.lighterGray,
+        SizedBox(
+          width: 1000,
+          child: GridView.builder(
+            shrinkWrap: true,
+            itemCount: 10,
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 4,
+              childAspectRatio: 1.3,
+              crossAxisSpacing: 0.0,
+              mainAxisSpacing: 0.5,
+            ),
+            itemBuilder: (context, index) => Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: ColorsManager.lighterGray,
+                  ),
+                  child: Image.asset(
+                    AssetsManager.test,
+                    fit: BoxFit.cover,
+                    // height: 99,
+                    // width: 176,
+                  ),
                 ),
-                child: Image.asset(
-                  AssetsManager.test,
-                  // height: 99,
-                  // width: 176,
+                Text("Randomize", style: TextStyles.font16BlackRegular),
+                Text(
+                  "A collection of daily UI \ndesign challenges",
+                  style: TextStyles.font14GrayRegular,
                 ),
-              ),
-              Text("Randomize", style: TextStyles.font16BlackRegular),
-              Text(
-                "A collection of daily UI \ndesign challenges",
-                style: TextStyles.font14GrayRegular,
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ],

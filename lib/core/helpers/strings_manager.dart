@@ -13,4 +13,6 @@ class StringsManger {
   static const String mylinkedIn = 'abanoub-ezzat97';
   static const String github = 'Github';
   static const String myGithub = 'AbanoubEzzat1';
+  static const String phone = 'Phone';
+  static const String myPhone = '+201271739443';
 }
