@@ -44,6 +44,8 @@ class MyProjects extends StatelessWidget {
                     fit: BoxFit.cover,
                     // height: 99,
                     // width: 176,
+                    // height: 99,
+                    // width: 176,
                   ),
                 ),
                 Text("Randomize", style: TextStyles.font16BlackRegular),
