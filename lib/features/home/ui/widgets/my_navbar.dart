@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/core/helpers/assets_manger.dart';
+import 'package:my_portfolio/core/helpers/links_manger.dart';
 import 'package:my_portfolio/core/helpers/strings_manager.dart';
+import 'package:my_portfolio/core/helpers/url_luncher.dart';
 import 'package:my_portfolio/core/theming/styles.dart';
 import 'package:my_portfolio/core/widgets/text_button.dart';
 import 'package:my_portfolio/features/home/logic/home_screen_logic.dart';
@@ -61,6 +63,13 @@ class MyNavbar extends StatelessWidget {
           onPressed: () {
             HomeScreenLogic.scrollToContact(
                 contactKey: contactKey, scrollController: scrollController);
+          },
+        ),
+        AppTextButton(
+          text: StringsManger.cv,
+          style: TextStyles.font14BlackMedium,
+          onPressed: () {
+            NavigateToUrl.urlLuncher(url: Uri.parse(LinksManger.cv));
           },
         ),
       ],

@@ -10,4 +10,6 @@ class LinksManger {
       'https://play.google.com/store/apps/details?id=abanoub.ezzat.fitsnap';
   static const String randomize =
       'https://play.google.com/store/apps/details?id=abnoub.ezzat.randomize';
+  static const String cv =
+      'https://drive.google.com/file/d/1842xMI5-sb2fMnbTZjJapN0M1-xoN-8U/view?usp=sharing';
 }

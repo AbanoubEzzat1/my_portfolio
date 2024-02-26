@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_portfolio/core/theming/colors.dart';
 
 class AppTextButton extends StatelessWidget {
   final String text;
@@ -15,6 +16,9 @@ class AppTextButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextButton(
       onPressed: onPressed,
+      style: ButtonStyle(
+        overlayColor: MaterialStateProperty.all(ColorsManager.lightBlue),
+      ),
       child: Text(
         text,
         style: style,

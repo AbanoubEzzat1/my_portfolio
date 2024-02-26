@@ -25,4 +25,5 @@ class StringsManger {
   static const String randomize = 'Randomize';
   static const String randomizeDescription =
       "An inventive decision-making app known for its intuitive user interface.";
+  static const String cv = 'CV';
 }
