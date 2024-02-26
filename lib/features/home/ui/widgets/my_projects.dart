@@ -6,11 +6,13 @@ import 'package:my_portfolio/core/theming/colors.dart';
 import 'package:my_portfolio/core/theming/styles.dart';
 
 class MyProjects extends StatelessWidget {
-  const MyProjects({super.key});
+  final GlobalKey projectKey;
+  const MyProjects({super.key, required this.projectKey});
 
   @override
   Widget build(BuildContext context) {
     return Column(
+      key: projectKey,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(

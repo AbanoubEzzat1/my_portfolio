@@ -15,4 +15,5 @@ class StringsManger {
   static const String myGithub = 'AbanoubEzzat1';
   static const String phone = 'Phone';
   static const String myPhone = '+201271739443';
+  static const String couldNotLaunch = 'Could not launch';
 }
