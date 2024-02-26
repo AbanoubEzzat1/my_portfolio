@@ -16,4 +16,13 @@ class StringsManger {
   static const String phone = 'Phone';
   static const String myPhone = '+201271739443';
   static const String couldNotLaunch = 'Could not launch';
+  static const String habitUp = 'HabitUp';
+  static const String habitUpDescription =
+      'A robust habit tracking app, blending real-time feedback with elegant design.';
+  static const String fitSnap = 'FitSnap';
+  static const String fitSnapDescription =
+      "A cutting-edge fitness tracker, seamlessly integrating real-time feedback and polished design.";
+  static const String randomize = 'Randomize';
+  static const String randomizeDescription =
+      "An inventive decision-making app known for its intuitive user interface.";
 }

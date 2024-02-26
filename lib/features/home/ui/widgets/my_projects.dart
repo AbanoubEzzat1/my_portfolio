@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:my_portfolio/core/helpers/assets_manger.dart';
 import 'package:my_portfolio/core/helpers/spacing.dart';
 import 'package:my_portfolio/core/helpers/strings_manager.dart';
+import 'package:my_portfolio/core/helpers/url_luncher.dart';
 import 'package:my_portfolio/core/theming/colors.dart';
 import 'package:my_portfolio/core/theming/styles.dart';
+import 'package:my_portfolio/features/home/data/models/projects.dart';
 
 class MyProjects extends StatelessWidget {
   final GlobalKey projectKey;
@@ -20,40 +21,57 @@ class MyProjects extends StatelessWidget {
           style: TextStyles.font18BlackBold,
         ),
         verticalSpace(10),
-        SizedBox(
-          width: 1000,
-          child: GridView.builder(
-            shrinkWrap: true,
-            itemCount: 10,
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 4,
-              childAspectRatio: 1.3,
-              crossAxisSpacing: 0.0,
-              mainAxisSpacing: 0.5,
-            ),
-            itemBuilder: (context, index) => Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    color: ColorsManager.lighterGray,
+        GridView.builder(
+          shrinkWrap: true,
+          itemCount: Projects.myProjectsList.length,
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 4,
+            childAspectRatio: 1.45,
+            crossAxisSpacing: 10,
+            mainAxisSpacing: 20,
+          ),
+          itemBuilder: (context, index) => InkWell(
+            splashColor: ColorsManager.mainBlue,
+            hoverColor: ColorsManager.white,
+            onTap: () {
+              NavigateToUrl.urlLuncher(
+                  url: Uri.parse(
+                Projects.myProjectsList[index].link,
+              ));
+            },
+            child: Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: ColorsManager.lighterGray,
+                    ),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(10),
+                      child: Image.asset(
+                        Projects.myProjectsList[index].image,
+                        fit: BoxFit.contain,
+                        height: 100,
+                        width: 200,
+                      ),
+                    ),
                   ),
-                  child: Image.asset(
-                    AssetsManager.test,
-                    fit: BoxFit.cover,
-                    // height: 99,
-                    // width: 176,
-                    // height: 99,
-                    // width: 176,
+                  verticalSpace(10),
+                  Text(
+                    Projects.myProjectsList[index].name,
+                    style: TextStyles.font16BlackRegular,
                   ),
-                ),
-                Text("Randomize", style: TextStyles.font16BlackRegular),
-                Text(
-                  "A collection of daily UI \ndesign challenges",
-                  style: TextStyles.font14GrayRegular,
-                ),
-              ],
+                  Text(
+                    Projects.myProjectsList[index].description,
+                    style: TextStyles.font14GrayRegular,
+                  ),
+                ],
+              ),
             ),
           ),
         ),
