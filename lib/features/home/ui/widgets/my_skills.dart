@@ -3,6 +3,7 @@ import 'package:my_portfolio/core/helpers/spacing.dart';
 import 'package:my_portfolio/core/helpers/strings_manager.dart';
 import 'package:my_portfolio/core/theming/colors.dart';
 import 'package:my_portfolio/core/theming/styles.dart';
+import 'package:my_portfolio/core/widgets/responsive.dart';
 import 'package:my_portfolio/features/home/data/models/skills.dart';
 
 class MySkills extends StatelessWidget {
@@ -31,11 +32,23 @@ class MySkills extends StatelessWidget {
     );
   }
 
-  Chip _buildMysSkills({required String label}) {
-    return Chip(
-      backgroundColor: ColorsManager.lightGray,
-      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-      label: Text(label, style: TextStyles.font14BlackMedium),
+  Widget _buildMysSkills({required String label}) {
+    return Responsive(
+      desktop: Chip(
+        backgroundColor: ColorsManager.lightGray,
+        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+        label: Text(label, style: TextStyles.font14BlackMedium),
+      ),
+      mobile: Chip(
+        backgroundColor: ColorsManager.lightGray,
+        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+        label: Text(label, style: TextStyles.font8BlackMedium),
+      ),
+      mobileFold: Chip(
+        backgroundColor: ColorsManager.lightGray,
+        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+        label: Text(label, style: TextStyles.font2BlackMedium),
+      ),
     );
   }
 }

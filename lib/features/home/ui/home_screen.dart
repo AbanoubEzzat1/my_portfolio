@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/core/helpers/spacing.dart';
 import 'package:my_portfolio/core/theming/colors.dart';
+import 'package:my_portfolio/core/widgets/responsive.dart';
 import 'package:my_portfolio/features/home/ui/widgets/about_me.dart';
 import 'package:my_portfolio/features/home/ui/widgets/avatar_name_job_title.dart';
 import 'package:my_portfolio/features/home/ui/widgets/my_contacts.dart';
@@ -23,12 +24,12 @@ class HomeScreen extends StatelessWidget {
       body: SafeArea(
           child: SingleChildScrollView(
         controller: scrollController,
-        child: _buildHomeScreen(),
+        child: _buildHomeScreen(context: context),
       )),
     );
   }
 
-  Widget _buildHomeScreen() {
+  Widget _buildHomeScreen({required BuildContext context}) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 100, vertical: 30),
       child: Column(
@@ -43,7 +44,7 @@ class HomeScreen extends StatelessWidget {
           ),
           const Divider(),
           verticalSpace(30),
-          const AvatarNameAndJobTitle(),
+          if (Responsive.isDesktop(context)) const AvatarNameAndJobTitle(),
           verticalSpace(30),
           AboutMe(aboutKey: aboutKey),
           verticalSpace(30),
