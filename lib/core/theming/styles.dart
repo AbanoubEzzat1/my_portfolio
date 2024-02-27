@@ -8,6 +8,16 @@ class TextStyles {
     fontWeight: FontWeightHelper.medium,
     color: ColorsManager.black,
   );
+  static TextStyle font8BlackMedium = const TextStyle(
+    fontSize: 8,
+    fontWeight: FontWeightHelper.medium,
+    color: ColorsManager.black,
+  );
+  static TextStyle font2BlackMedium = const TextStyle(
+    fontSize: 2,
+    fontWeight: FontWeightHelper.medium,
+    color: ColorsManager.black,
+  );
   static TextStyle font16BlackRegular = const TextStyle(
     fontSize: 16,
     fontWeight: FontWeightHelper.regular,
