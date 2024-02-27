@@ -23,12 +23,12 @@ class HomeScreen extends StatelessWidget {
       body: SafeArea(
           child: SingleChildScrollView(
         controller: scrollController,
-        child: _buildHomeScreen(),
+        child: _buildHomeScreen(context: context),
       )),
     );
   }
 
-  Widget _buildHomeScreen() {
+  Widget _buildHomeScreen({required BuildContext context}) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 100, vertical: 30),
       child: Column(

@@ -7,11 +7,13 @@ class Responsive extends StatelessWidget {
     this.tablet,
     this.mobileLarge,
     required this.mobile,
+    this.mobileFold,
   }) : super(key: key);
 
   final Widget desktop;
   final Widget? tablet;
   final Widget? mobileLarge;
+  final Widget? mobileFold;
   final Widget mobile;
 
   static bool isDesktop(BuildContext context) {
@@ -39,6 +41,8 @@ class Responsive extends StatelessWidget {
       return tablet!;
     } else if (_size.width >= 450 && mobileLarge != null) {
       return mobileLarge!;
+    } else if (_size.width <= 280 && mobileFold != null) {
+      return mobileFold!;
     } else {
       return mobile;
     }
